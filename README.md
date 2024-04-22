@@ -77,6 +77,8 @@ Follow these steps to create a token:
 8. Copy the generated token.
 9. **IMPORTANT:** Save the token securely. Once you navigate away from this page, you won't be able to see the token again.
 
+![](token-creation.png)
+
 Now that you have your token, you can use it in Jenkins for authentication when connecting to SonarQube.
 
 
@@ -99,6 +101,7 @@ Now that you have your token, you can use it in Jenkins for authentication when 
   - Go to **Manage Jenkins > Configure System**.
   - Under SonarQube servers, add a new server with the SonarQube URL and credentials(token).
   - Test the connection to ensure it's successful.
+    ![](sonar-config.png)
 
 ### Step 4: Create Jenkins Pipeline
 
@@ -118,7 +121,8 @@ Now that you have your token, you can use it in Jenkins for authentication when 
 ```
 
 2. Commit and push the Jenkinsfile to your GitHub repository.
-3. Ensure the github hook trigger checkbox is ticked.
+3. Ensure the github hook trigger checkbox in jenkins is ticked.
+   ![](checkbox.png)
 
 ### Usage
 

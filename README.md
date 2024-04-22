@@ -6,7 +6,7 @@ This document outlines the process of integrating GitHub, Jenkins, and SonarQube
 
 ## Architecture
 
-![Architecture Diagram](link-to-your-diagram)
+![](Architecture.png)
 
 ### Components
 
@@ -129,7 +129,8 @@ Now that you have your token, you can use it in Jenkins for authentication when 
 1. Make code changes and push them to your GitHub repository.
 2. Jenkins will automatically trigger a build when changes are detected. 
 3. Jenkins will execute the pipeline defined in the Jenkinsfile, including code scanning with SonarQube.
-4. SonarQube analysis results will be displayed in Jenkins, providing insights into code quality and security.
+   ![](pipeline.png)
+5. SonarQube analysis results will be displayed, providing insights into code quality and security.
 
 ### Conclusion
 

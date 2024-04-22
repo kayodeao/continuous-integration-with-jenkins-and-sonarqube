@@ -131,6 +131,7 @@ Now that you have your token, you can use it in Jenkins for authentication when 
 3. Jenkins will execute the pipeline defined in the Jenkinsfile, including code scanning with SonarQube.
    ![](pipeline.png)
 5. SonarQube analysis results will be displayed, providing insights into code quality and security.
+   ![](sonarqube_report.png)
 
 ### Conclusion
 

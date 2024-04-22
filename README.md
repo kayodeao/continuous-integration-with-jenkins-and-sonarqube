@@ -91,7 +91,6 @@ Now that you have your token, you can use it in Jenkins for authentication when 
    - create a new pipeline project, click on "New Item" on the Jenkins home page and select "Pipeline". Give your project a name and click "OK".
    - In the pipeline configuration page, scroll down to the "Pipeline" section and select "Pipeline script from SCM" as the definition. Choose "Git" as the SCM and enter the URL 
      of your GitHub repository. You can also specify the branch to use for the pipeline.
-   -
    - Save the pipeline
      
      

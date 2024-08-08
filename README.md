@@ -56,6 +56,37 @@ docker run -d --name sonarqube-db -e POSTGRES_USER=sonar -e POSTGRES_PASSWORD=so
 ```bash
 docker run -d --name sonarqube -p 9000:9000 --link sonarqube-db:db -e SONAR_JDBC_URL=jdbc:postgresql://db:5432/sonarqube -e SONAR_JDBC_USERNAME=sonar -e SONAR_JDBC_PASSWORD=sonar sonarqube
 ```
+
+
+
+Now, you may need to increase the vm.max_map_count setting on your host machine. This setting controls the maximum number of memory map areas a process can use, which Elasticsearch, a core component of SonarQube requires to function properly, meaning when you run ``docker ps`` commannd to list containers you may not see the sonarqube container. If that is the case, this is the fix below. 
+
+### Fix :
+***Increase vm.max_map_count Value:***
+You can temporarily change this value using the following command:
+
+```bash
+sudo sysctl -w vm.max_map_count=262144
+```
+
+***Make the Change Permanent:***
+To ensure the change persists across reboots, you need to update the /etc/sysctl.conf file:
+
+```bash
+sudo sh -c 'echo "vm.max_map_count=262144" >> /etc/sysctl.conf'
+```
+
+***After updating the file, apply the changes with:***
+```bash
+sudo sysctl -p
+```
+
+***Restart Docker Container:***
+Once you've made these changes, restart your SonarQube container:
+```bash
+docker restart sonarqube
+```
+
 4. Access SonarQube at `http://sonarqube-instance-ip:9000` and set up the admin credentials.
 5.  Create a local project and enter the project name, and select branch.
 6.  select global setting and create project.

@@ -56,7 +56,7 @@ docker run -d --name sonarqube-db -e POSTGRES_USER=sonar -e POSTGRES_PASSWORD=so
 ```bash
 docker run -d --name sonarqube -p 9000:9000 --link sonarqube-db:db -e SONAR_JDBC_URL=jdbc:postgresql://db:5432/sonarqube -e SONAR_JDBC_USERNAME=sonar -e SONAR_JDBC_PASSWORD=sonar sonarqube
 ```
-4. Access SonarQube at `http://sonarqube-vm-ip:9000` and set up the admin credentials.
+4. Access SonarQube at `http://sonarqube-instance-ip:9000` and set up the admin credentials.
 5.  Create a local project and enter the project name, and select branch.
 6.  select global setting and create project.
 7.  Analyze with Jenkins and select github as your devops platform.
